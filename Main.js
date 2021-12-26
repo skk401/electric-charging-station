@@ -40,6 +40,17 @@ function calcRoute() {
             output.innerHTML = "<div class='alert-info'>From: " + document.getElementById("from").value + ".<br />To: " + document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Driving time  : " + result.routes[0].legs[0].duration.text +  ".<br />Total number of Ports available  : " +  10 +   ".<br />Number of spare ports  : " + Math.floor(Math.random() * 2) + ".<br />Number of vehicles in queue  : " + Math.floor(Math.random() * 10) + ".</div>";
 
 
+
+            // new addition 
+
+            const schdule = document.querySelector('#schdule');
+            schdule.innerHTML = "<div class='alert-info'> Booking Slot At: " + document.getElementById("to").value + ".<br /> Driving distance <i class='fas fa-road'></i> : " + result.routes[0].legs[0].distance.text + ".<br />Driving time  : " + result.routes[0].legs[0].duration.text +    ".</div>";
+
+             
+            const date = document.querySelector('#date');
+            date.innerHTML = "<input type='date' id='date'> " + ".</div>";
+
+            
             //display route
             directionsDisplay.setDirections(result);
             
@@ -51,6 +62,19 @@ function calcRoute() {
 
             //show error message
             output.innerHTML = "<div class='alert-danger'><i class='fas fa-exclamation-triangle'></i> Could not retrieve driving distance.</div>";
+
+
+            const date = document.querySelector('#date');
+            date.innerHTML = "<input type='date' id='date'> " + ".</div>";
+
+
+
+            const time = document.querySelector('#time');
+            time.innerHTML = "<input type='time' id='time'> " + ".</div>";
+
+            const yes = document.querySelector('#yes');
+            yes.innerHTML = "<button type='button' class='btn btn-primary btn-lg' id='yes'>Schdule now </button> " + ".</div>";
+            
         }
     });
 
